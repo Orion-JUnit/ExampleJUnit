@@ -37,8 +37,8 @@ class ReverbListingsTest extends TestConfig {
 
     @Test
     @Order(3)
-    @DisplayName("Validate Sell Page title from HAR")
-    void testSellPageTitleFromHAR() {
+    @DisplayName("Validate Sell Page title")
+    void testSellPageTitleFrom() {
         String html = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" " +
                 "\"http://www.w3.org/TR/html4/strict.dtd\">\n" +
                 "<html class='' data-theme='web2' lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>\n" +
