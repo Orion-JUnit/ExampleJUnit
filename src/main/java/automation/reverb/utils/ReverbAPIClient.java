@@ -1,19 +1,29 @@
 package automation.reverb.utils;
 
 import io.restassured.response.Response;
+
 import static io.restassured.RestAssured.given;
 
 public class ReverbAPIClient {
 
-    public static Response searchListings(String query) {
+    public Response getRecentlyFeaturedArticles() {
         return given()
-                .queryParam("query", query)
+                .header("accept", "*/*")
+                .header("accept-version", "3.0")
+                .header("x-display-currency", "USD")
                 .when()
-                .get("/listings")
+                .get("/api/articles/recently_featured")
                 .then()
                 .extract()
                 .response();
     }
 
-    // Add more API methods as needed
+    public Response getSellPage() {
+        return given()
+                .when()
+                .get("/sell/search")
+                .then()
+                .extract()
+                .response();
+    }
 }

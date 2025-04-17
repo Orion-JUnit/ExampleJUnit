@@ -5,23 +5,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReverbAssertions {
 
-    public static void assertSuccessfulListingSearch(Response response) {
+    public static void assertFeaturedArticles(Response response) {
         assertThat(response.statusCode())
-                .as("Expecting HTTP status 200 for successful listings search.")
+                .as("Expected HTTP status 200 for recently featured articles.")
                 .isEqualTo(200);
-
-        assertThat(response.jsonPath().getList("listings"))
-                .as("Listings should not be empty.")
-                .isNotEmpty();
     }
 
-    public static void assertEmptyListingSearch(Response response) {
-        assertThat(response.statusCode())
-                .as("Expecting HTTP status 200 even if no listings are found.")
-                .isEqualTo(200);
+    public static void assertSellPageLoaded(Response response) {
+        assertThat(response.getContentType())
+                .as("Sell page should return HTML content.")
+                .contains("text/html");
+    }
 
-        assertThat(response.jsonPath().getList("listings"))
-                .as("Listings should be empty for invalid queries.")
-                .isEmpty();
+    public static void assertSellPageTitle(String html) {
+        assertThat(html)
+                .as("Sell page should contain the correct <title>")
+                .contains("<title>Sell Musical Instruments on Reverb");
     }
 }
