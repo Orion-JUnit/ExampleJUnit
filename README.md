@@ -64,6 +64,7 @@ mvnw.cmd clean test       # Windows
 ```
 src/
 ├── main/java/automation/reverb/
+│   ├── assertions/   # Custom Assertion class for better scalability
 │   ├── config/       # TestConfig with base URI
 │   └── utils/        # ReverbAPIClient for HTTP interactions
 ├── test/java/automation/reverb/
