@@ -70,15 +70,17 @@ src/
 
 ---
 
-## 🔧 Optional Improvements (Already Partially Supported)
+## 🚀 How to Run This Project Locally
 
-To make onboarding even easier:
-- ✅ Add `mvnw`/`mvnw.cmd` (Maven Wrapper) to eliminate Maven dependency
-- ✅ Include `.editorconfig` or code style guidelines
-- ✅ Create `/resources` folder to store sample HAR files and reference HTML
+### ✅ 1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/reverb-api-testing.git
+cd reverb-api-testing
+```
 
+### ✅ 2. **Build and run tests using the Maven Wrapper**
+```bash
+./mvnw clean test         # For Mac/Linux
+mvnw.cmd clean test       # For Windows
+```
 ---
-
-## 📜 License
-
-MIT or as applicable.
