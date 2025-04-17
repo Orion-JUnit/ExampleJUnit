@@ -1,58 +1,61 @@
 # Reverb API Test Suite (JUnit + RestAssured)
 
-This project is a lean, fast, and maintainable **API test framework built with JUnit 5 and RestAssured**.  
-It reflects real-world API validation scenarios — including tests driven from captured HAR files (browser activity) — and is designed for easy execution on any developer or QA workstation.
+A lightweight and maintainable **API test framework built with JUnit 5 and RestAssured**, designed for real-world validation using production-like traffic captured via HAR files. This project emphasizes test clarity, performance, and easy portability — ideal for showcasing automation architecture skills in Java-based environments.
 
 ---
 
-## 🧑‍💻 About This Project
+## 🔍 Overview
 
-Built to demonstrate both technical precision and test maintainability, this project shows how:
-- To create modular API clients (`ReverbAPIClient`)
-- To centralize configuration (`TestConfig`)
-- To validate real-world browser activity (`HAR`-driven assertions)
-- To run tests without Spring or external dependencies — fully portable, CLI/IDE-friendly
+This project demonstrates:
+- Modular API client creation (`ReverbAPIClient`)
+- Config centralization (`TestConfig`)
+- Real-world scenario testing using browser-captured HAR files
+- Lightweight, framework-free execution (no Spring Boot)
+
+Built with portability in mind, it runs seamlessly from any workstation or CI/CD environment with minimal setup.
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Java 17+
-- JUnit 5
-- RestAssured
-- AssertJ (for fluent assertions)
-- Maven (with optional Maven Wrapper)
+- **Java 17+**
+- **JUnit 5** – Test lifecycle and assertions
+- **RestAssured** – HTTP request/response handling
+- **AssertJ** – Fluent assertion library
+- **Maven** – Dependency and build management
+- **Maven Wrapper** – Run without installing Maven locally
 
 ---
 
-## 🚀 How to Run This Project Locally
+## 🚀 Getting Started (Local Execution)
 
-### ✅ 1. **Clone the repository**
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/reverb-api-testing.git
 cd reverb-api-testing
 ```
 
-### ✅ 2. **Build and run tests using Maven**
+### 2. Run the Test Suite
 ```bash
-./mvnw clean test         # if using Maven Wrapper (recommended)
-# OR
-mvn clean test            # if Maven is already installed on your system
+./mvnw clean test         # Mac/Linux
+mvnw.cmd clean test       # Windows
 ```
 
-### ✅ 3. **Run a specific test class in IntelliJ or VSCode**
+> ☑️ No need to install Maven — the wrapper is included.
+
+### 3. Run Specific Tests in IntelliJ or VSCode
 - Open `ReverbListingsTest.java`
 - Right-click any test method → **Run**
 
 ---
 
-## 🧪 Included Test Coverage
+## 🧪 Test Coverage Summary
 
-| Test Case | Purpose |
-|----------|---------|
-| `testRecentlyFeaturedArticles()` | Verifies API availability and content on Reverb’s featured articles |
-| `testSellGearRedirectsToSellPage()` | Simulates “Sell Your Gear” click and validates redirect |
-| `testSellPageTitleFromHAR()` | Validates static HTML content (e.g. page title) from HAR file |
+| Test Method                          | Description                                                              |
+|-------------------------------------|--------------------------------------------------------------------------|
+| `testRecentlyFeaturedArticles()`    | Validates Reverb's featured articles API returns expected content        |
+| `testSellGearRedirectsToSellPage()` | Simulates "Sell Your Gear" click, validates redirect behavior or access  |
+| `testSellPageTitleFromHAR()`        | Verifies that the static HTML from the HAR includes the correct title    |
 
 ---
 
@@ -68,19 +71,4 @@ src/
 │   └── tests/        # JUnit test classes
 ```
 
----
-
-## 🚀 How to Run This Project Locally
-
-### ✅ 1. **Clone the repository**
-```bash
-git clone https://github.com/your-username/reverb-api-testing.git
-cd reverb-api-testing
-```
-
-### ✅ 2. **Build and run tests using the Maven Wrapper**
-```bash
-./mvnw clean test         # For Mac/Linux
-mvnw.cmd clean test       # For Windows
-```
 ---
